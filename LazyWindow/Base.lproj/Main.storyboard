@@ -372,9 +372,20 @@
                                     <segue destination="yp7-t0-Z4t" kind="sheet" id="TGr-FP-6Zj"/>
                                 </connections>
                             </button>
+                            <button autoresizesSubviews="NO" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oKH-IR-E3U">
+                                <rect key="frame" x="506" y="13" width="58" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <buttonCell key="cell" type="inline" title="Refresh" bezelStyle="inline" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Agv-xc-ree">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                    <string key="keyEquivalent">o</string>
+                                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="refreshButton" destination="oKH-IR-E3U" id="XBd-Vu-Bry"/>
                         <outlet property="webViews" destination="mA6-P3-BmQ" id="aao-L7-P8y"/>
                     </connections>
                 </viewController>

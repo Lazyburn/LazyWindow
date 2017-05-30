@@ -11,6 +11,7 @@ import WebKit
 
 class ViewController: NSViewController {
     
+    @IBOutlet weak var refreshButton: NSButton!
     @IBOutlet weak var webViews: WebView!
     
     static var targetURL: String!
@@ -21,6 +22,10 @@ class ViewController: NSViewController {
             webViews.mainFrame.load(URLRequest(url: URL(string: ViewController.targetURL)!))
         }
     }
+   
+    func refresh() {
+        webViews.mainFrame.reload()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +33,8 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
 
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.changeView), name: ViewController.goUrl, object: nil)
-        
+        refreshButton.target = self
+        refreshButton.action = #selector(ViewController.refresh)
     }
     
     override var representedObject: Any? {
@@ -36,6 +42,7 @@ class ViewController: NSViewController {
             // Update the view, if already loaded.
         }
     }
+    
     override func keyDown(with event: NSEvent){
         if (event.keyCode == 53) {
             exit(0)
